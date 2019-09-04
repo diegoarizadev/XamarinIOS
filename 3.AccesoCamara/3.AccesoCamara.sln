@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.AccesoCamara", "3.AccesoCamara.csproj", "{8146489D-679B-406C-93EA-826C42BB35FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Debug|iPhone.Build.0 = Debug|iPhone
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Release|iPhone.ActiveCfg = Release|iPhone
+		{8146489D-679B-406C-93EA-826C42BB35FF}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal
