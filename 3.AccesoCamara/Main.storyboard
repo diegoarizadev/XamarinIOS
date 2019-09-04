@@ -1,27 +1,68 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772" />
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0" />
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ" />
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE" />
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736" />
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Clz-wu-Q2H">
+                                <rect key="frame" x="155" y="824" width="105" height="30"/>
+                                <state key="normal" title="Camara IPhone"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@N0rf3n" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVH-KF-e9e">
+                                <rect key="frame" x="172" y="795" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q12-KK-cyB">
+                                <rect key="frame" x="134" y="87" width="147" height="30"/>
+                                <state key="normal" title="Biblioteca Dispositivo"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yov-Rm-wEC">
+                                <rect key="frame" x="20" y="140" width="374" height="617"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yov-Rm-wEC" firstAttribute="top" secondItem="q12-KK-cyB" secondAttribute="bottom" constant="23" id="9E1-pY-Ugd"/>
+                            <constraint firstItem="Clz-wu-Q2H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="155" id="D5k-tG-YVu"/>
+                            <constraint firstItem="Clz-wu-Q2H" firstAttribute="top" secondItem="tVH-KF-e9e" secondAttribute="bottom" constant="8" id="KXM-0X-nJS"/>
+                            <constraint firstAttribute="trailing" secondItem="tVH-KF-e9e" secondAttribute="trailing" constant="172" id="MET-Gd-5OK"/>
+                            <constraint firstItem="q12-KK-cyB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="134" id="MPA-7V-jTE"/>
+                            <constraint firstItem="q12-KK-cyB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="Q7d-Pl-622"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yov-Rm-wEC" secondAttribute="bottom" constant="105" id="T6c-3H-OaI"/>
+                            <constraint firstItem="tVH-KF-e9e" firstAttribute="top" secondItem="q12-KK-cyB" secondAttribute="bottom" constant="678" id="TOL-9u-pJU"/>
+                            <constraint firstItem="Yov-Rm-wEC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ZGQ-9D-RiS"/>
+                            <constraint firstItem="tVH-KF-e9e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="172" id="cjd-KY-dVU"/>
+                            <constraint firstAttribute="trailing" secondItem="Yov-Rm-wEC" secondAttribute="trailing" constant="20" id="y3a-vA-Df3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnBiblioteca" destination="q12-KK-cyB" id="7Zj-M9-qTP"/>
+                        <outlet property="btnCamara" destination="Clz-wu-Q2H" id="Qbv-Lz-Hys"/>
+                        <outlet property="imagenes" destination="Yov-Rm-wEC" id="1c4-IQ-c7f"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder" />
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0" />
+            <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
 </document>
