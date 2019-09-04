@@ -50,5 +50,7 @@
 	<string>Acceder a la cámara</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Acceder a la galeria</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Accesos Adicionales a la galeria</string>
 </dict>
 </plist>
