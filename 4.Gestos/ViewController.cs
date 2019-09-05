@@ -14,8 +14,8 @@ namespace _4.Gestos
 
         bool Toque;
 
-        UIRotationGestureRecognizer GestoRotar;
-        UIPanGestureRecognizer GestoMover;
+        UIRotationGestureRecognizer GestoRotar;//UIRotationGestureRecognizer GestoRotar;
+        UIPanGestureRecognizer GestoMover;//UIPanGestureRecognizer GestoMover;
         UIAlertController ALerta;
 
 
@@ -34,7 +34,7 @@ namespace _4.Gestos
             //Se aplican los gestos a la imagen
             image.AddGestureRecognizer(GestoToque);
 
-            GestoMover = (UIKit.UIPanGestureRecognizer)new UIGestureRecognizer(() =>
+            GestoMover = new UIPanGestureRecognizer(() =>
             {
 
                 if ((GestoMover.State == UIGestureRecognizerState.Began || //Validar el estado del gesto
@@ -65,7 +65,7 @@ namespace _4.Gestos
             });
 
 
-            GestoRotar = (UIKit.UIRotationGestureRecognizer)new UIGestureRecognizer(() =>
+            GestoRotar = new UIRotationGestureRecognizer(() =>
             {
 
                 if ((GestoRotar.State == UIGestureRecognizerState.Began || //Validar el estado del gesto
