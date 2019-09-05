@@ -13,13 +13,13 @@ namespace _4.Gestos
 	partial class ViewController
 	{
 		[Outlet]
-		UIKit.UIImageView imagen { get; set; }
+		UIKit.UIImageView image { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (imagen != null) {
-				imagen.Dispose ();
-				imagen = null;
+			if (image != null) {
+				image.Dispose ();
+				image = null;
 			}
 		}
 	}

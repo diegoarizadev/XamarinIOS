@@ -28,11 +28,11 @@ namespace _4.Gestos
         {
             base.ViewDidLoad();
 
-            imagen.UserInteractionEnabled = true; //
+            image.UserInteractionEnabled = true; //
             var GestoToque = new UITapGestureRecognizer(Tocando);
 
             //Se aplican los gestos a la imagen
-            imagen.AddGestureRecognizer(GestoToque);
+            image.AddGestureRecognizer(GestoToque);
 
             GestoMover = (UIKit.UIPanGestureRecognizer)new UIGestureRecognizer(() =>
             {
@@ -45,14 +45,14 @@ namespace _4.Gestos
                     var P0 = GestoMover.LocationInView(View); //Gesto en toda la pantalla.
 
                     if (coordenadasX == 0)
-                        coordenadasX = P0.X - imagen.Center.X;
+                        coordenadasX = P0.X - image.Center.X;
 
                     if (coordenadasY == 0)
-                        coordenadasY = P0.Y - imagen.Center.Y;
+                        coordenadasY = P0.Y - image.Center.Y;
 
                     var P1 = new CGPoint(P0.X - coordenadasX, P0.Y - coordenadasY);
 
-                    imagen.Center = P1;
+                    image.Center = P1;
 
                 }
                 else
@@ -72,7 +72,7 @@ namespace _4.Gestos
                     GestoRotar.State == UIGestureRecognizerState.Changed) &&
                     (GestoRotar.NumberOfTouches == 2)) //el gesto de rotar se hace con dos toques.
                 {
-                    imagen.Transform = CGAffineTransform.MakeRotation(GestoRotar.Rotation + rotacion); //Se vuelve a verificar el estado, para validar en donde se quedo.
+                    image.Transform = CGAffineTransform.MakeRotation(GestoRotar.Rotation + rotacion); //Se vuelve a verificar el estado, para validar en donde se quedo.
                 }
                 else if (GestoRotar.State == UIGestureRecognizerState.Ended)
                 {
@@ -81,8 +81,8 @@ namespace _4.Gestos
             });
 
             //Se aplican los gestos a la imagen
-            imagen.AddGestureRecognizer(GestoMover);
-            imagen.AddGestureRecognizer(GestoRotar);
+            image.AddGestureRecognizer(GestoMover);
+            image.AddGestureRecognizer(GestoRotar);
 
         }
 
