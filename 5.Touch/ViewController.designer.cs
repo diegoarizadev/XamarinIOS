@@ -13,29 +13,29 @@ namespace _5.Touch
 	partial class ViewController
 	{
 		[Outlet]
-		UIKit.UILabel lblX { get; set; }
+		UIKit.UILabel lblValueX { get; set; }
 
 		[Outlet]
-		UIKit.UILabel lblY { get; set; }
+		UIKit.UILabel lblValueY { get; set; }
 
 		[Outlet]
-		UIKit.UILabel lblZ { get; set; }
+		UIKit.UILabel lblValueZ { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (lblX != null) {
-				lblX.Dispose ();
-				lblX = null;
+			if (lblValueX != null) {
+				lblValueX.Dispose ();
+				lblValueX = null;
 			}
 
-			if (lblY != null) {
-				lblY.Dispose ();
-				lblY = null;
+			if (lblValueY != null) {
+				lblValueY.Dispose ();
+				lblValueY = null;
 			}
 
-			if (lblZ != null) {
-				lblZ.Dispose ();
-				lblZ = null;
+			if (lblValueZ != null) {
+				lblValueZ.Dispose ();
+				lblValueZ = null;
 			}
 		}
 	}
