@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.Mapas", "6.Mapas.csproj", "{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Debug|iPhone.Build.0 = Debug|iPhone
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Release|iPhone.ActiveCfg = Release|iPhone
+		{E4CEB10D-62B6-4E9E-8C75-A63CC1AA53CB}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal
