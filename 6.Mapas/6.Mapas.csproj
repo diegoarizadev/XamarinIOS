@@ -68,6 +68,9 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+      <PackageReference Include="Xam.Plugin.Geolocator">
+        <Version>4.5.0.6</Version>
+      </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">

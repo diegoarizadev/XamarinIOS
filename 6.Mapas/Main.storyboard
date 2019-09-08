@@ -283,12 +283,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="lblCiudad" destination="TeO-bV-xXy" id="f0v-Ek-N4e"/>
-                        <outlet property="lblDepartamento" destination="0oV-rd-U1z" id="FFN-lG-1iH"/>
-                        <outlet property="lblLatitud" destination="SQL-k8-B71" id="0Ra-ZC-hnO"/>
-                        <outlet property="lblLongitud" destination="xx2-7o-WRT" id="FKb-zZ-FRd"/>
-                        <outlet property="lblMunicipio" destination="cZh-6u-fmP" id="BtO-IO-htR"/>
-                        <outlet property="lblPais" destination="jew-cw-Nwe" id="smF-C5-Gmv"/>
+                        <outlet property="lblCiudad" destination="TeO-bV-xXy" id="f9f-fc-ua1"/>
+                        <outlet property="lblDepartamento" destination="0oV-rd-U1z" id="gZl-uk-WqN"/>
+                        <outlet property="lblLatitud" destination="SQL-k8-B71" id="XGk-gZ-qHg"/>
+                        <outlet property="lblLongitud" destination="xx2-7o-WRT" id="GM9-a0-I4E"/>
+                        <outlet property="lblMunicipio" destination="cZh-6u-fmP" id="1De-rM-UeP"/>
+                        <outlet property="lblPais" destination="jew-cw-Nwe" id="m9Y-8A-dR8"/>
+                        <outlet property="mpMapa" destination="ZmK-7m-1gN" id="XRv-ot-3l8"/>
+                        <outlet property="txtDescripcion" destination="oo7-dR-gqY" id="o9q-Vt-oWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -29,17 +29,18 @@ namespace _6.Mapas
 
 		[Outlet]
 		UIKit.UILabel lblPais { get; set; }
+
+		[Outlet]
+		MapKit.MKMapView mpMapa { get; set; }
+
+		[Outlet]
+		UIKit.UITextView txtDescripcion { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (lblPais != null) {
-				lblPais.Dispose ();
-				lblPais = null;
-			}
-
-			if (lblDepartamento != null) {
-				lblDepartamento.Dispose ();
-				lblDepartamento = null;
+			if (txtDescripcion != null) {
+				txtDescripcion.Dispose ();
+				txtDescripcion = null;
 			}
 
 			if (lblCiudad != null) {
@@ -47,9 +48,9 @@ namespace _6.Mapas
 				lblCiudad = null;
 			}
 
-			if (lblMunicipio != null) {
-				lblMunicipio.Dispose ();
-				lblMunicipio = null;
+			if (lblDepartamento != null) {
+				lblDepartamento.Dispose ();
+				lblDepartamento = null;
 			}
 
 			if (lblLatitud != null) {
@@ -60,6 +61,21 @@ namespace _6.Mapas
 			if (lblLongitud != null) {
 				lblLongitud.Dispose ();
 				lblLongitud = null;
+			}
+
+			if (lblMunicipio != null) {
+				lblMunicipio.Dispose ();
+				lblMunicipio = null;
+			}
+
+			if (lblPais != null) {
+				lblPais.Dispose ();
+				lblPais = null;
+			}
+
+			if (mpMapa != null) {
+				mpMapa.Dispose ();
+				mpMapa = null;
 			}
 		}
 	}
