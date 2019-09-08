@@ -36,7 +36,7 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-fb-CYG">
                                 <rect key="frame" x="39" y="809.5" width="336" height="29.5"/>
                                 <segments>
-                                    <segment title="First"/>
+                                    <segment title="Estándar"/>
                                     <segment title="Satélite"/>
                                     <segment title="Híbrido"/>
                                 </segments>
