@@ -12,7 +12,7 @@ namespace _7.Rutas
 
         List<Datos> Lista; //Se crea una lista de la clase Datos
 
-        public ViewController(IntPtr handle) : base(handle)
+        protected ViewController(IntPtr handle) : base(handle)
         {
 
             //AL momento de iniciar
@@ -23,9 +23,9 @@ namespace _7.Rutas
         {
             var InformacionLista = new List<Datos>() //Esto es una instanacia.
             {
-                new Datos("Bogota", 4.570868, -74.2973328),
-                new Datos("Medellin", 6.2518400, -75.5635900),
-                new Datos("Bucaramanga",  7.11392, -73.1198)
+                new Datos("Bucaramanga", 7.1253901, -73.1197968),
+                new Datos("Bogotá", 4.6097102, -74.081749),
+                new Datos("Medellin", 6.2518401, -75.563591)
             };
 
             return InformacionLista;
@@ -36,9 +36,11 @@ namespace _7.Rutas
         {
             base.ViewDidLoad();
 
+            Console.WriteLine("N0rf3n - ViewDidLoad - Begin ");
+
             try
             {
-                var CentrarMapa = new CLLocationCoordinate2D(4.570868, -74.2973328); 
+                var CentrarMapa = new CLLocationCoordinate2D(4.6097102, -74.081749);
                 var AlturaMapa = new MKCoordinateSpan(.003, .003);
                 var Region = new MKCoordinateRegion(CentrarMapa, AlturaMapa);
                 mpMapa.SetRegion(Region, true); //Se asigna la región en el mapa.
@@ -46,10 +48,10 @@ namespace _7.Rutas
                 Selector.ValueChanged += (sender, e) => //Cuando el selector cambie, se le va asignar un evento.
                 {
 
-                    switch(Selector.SelectedSegment) //Para cuando cambiar el valor del selector.
+                    switch (Selector.SelectedSegment) //Para cuando cambiar el valor del selector.
                     {
                         case 0: //Mapa Estandar
-                            mpMapa.MapType =  MKMapType.Standard;
+                            mpMapa.MapType = MKMapType.Standard;
                             break;
 
                         case 1: //Mapa Satellite
@@ -62,29 +64,32 @@ namespace _7.Rutas
                     }
                 };
 
-                Lista.ForEach(x => mpMapa.AddAnnotation(new MKPointAnnotation()    //ciclo para la lista y se agregara un marcador
+                Lista.ForEach(x => mpMapa.AddAnnotation(new MKPointAnnotation()    //ciclo para la vista y se agregara un marcador en el mapa
                 {
                     Title = x.Titulo,
-                    Coordinate = new CLLocationCoordinate2D() {
+                    Coordinate = new CLLocationCoordinate2D()
+                    {
                         Latitude = x.Latitud,
                         Longitude = x.Longitud
                     }
 
                 }));
 
-                var Bogota = new CLLocationCoordinate2D(4.570868, -74.2973328); //origen y destino deseado
-                var Medellin = new CLLocationCoordinate2D(6.2518400, -75.5635900); //origen y destino deseado
+                var Leon = new CLLocationCoordinate2D(21.1502859, -101.7104848); //origen y destino deseado
+                var CDMX = new CLLocationCoordinate2D(19.4329256, -99.1334383); //origen y destino deseado
+        
                 var Info = new NSDictionary();//Variable de tipo diccionario
 
                 var OrigenDestino = new MKDirectionsRequest()
                 {
-                    Source = new MKMapItem(new MKPlacemark(Bogota, Info)),//Origen
-                    Destination = new MKMapItem(new MKPlacemark(Medellin, Info)),//Destino
+                    Source = new MKMapItem(new MKPlacemark(Leon, Info)),//Origen
+                    Destination = new MKMapItem(new MKPlacemark(CDMX, Info)),//Destino
                 };
 
-                var Direcciones = new MKDirections(OrigenDestino);
-                Direcciones.CalculateDirections((response, error) => {//aqui se realiza el calculo de la ruta
-
+                MKDirections mKDirections = new MKDirections(OrigenDestino);
+                MKDirections Direcciones = mKDirections;
+                Direcciones.CalculateDirections((response, error) => //aqui se realiza el calculo de la ruta
+                {
                     //Se empizan a definir las propiedades para el trazo de la ruta.
 
                     var Ruta = response.Routes[0]; //ruta!
@@ -97,11 +102,14 @@ namespace _7.Rutas
 
                     };
 
-                    mpMapa.OverlayRenderer = (mapView, overly) => Linea;//Asignación de la linea o linea sobre el mapa.
-                    mpMapa.AddOverlay(Ruta.Polyline, MKOverlayLevel.AboveRoads); //Se agrega la ruta en el mapa y Va pasar por encima de las etiquetas "MKOverlayLevel.AboveRoads"
+                    mpMapa.OverlayRenderer = (mapView, overlay) => Linea;//Asignación de la linea o linea sobre el mapa.
+                    mpMapa.AddOverlay(Ruta.Polyline,
+                                      MKOverlayLevel.AboveRoads); //Se agrega la ruta en el mapa y Va pasar por encima de las etiquetas "MKOverlayLevel.AboveRoads"
 
 
                 });
+
+                Console.WriteLine("N0rf3n - ViewDidLoad - End ");
 
             }
             catch (Exception ex)
@@ -130,7 +138,7 @@ namespace _7.Rutas
     public class Datos
     {
 
-        public Datos(String titulo, double latitud, double longitud) //la clase recibe 3 valores.
+        public Datos(string titulo, double latitud, double longitud) //la clase recibe 3 valores.
         {
             Titulo = titulo;
             Latitud = latitud;
@@ -138,7 +146,7 @@ namespace _7.Rutas
         }
 
         //Getters and Setters
-        public String Titulo { get; set; }
+        public string Titulo { get; set; }
         public double Latitud { get; set; }
         public double Longitud { get; set; }
     }
