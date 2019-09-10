@@ -131,6 +131,21 @@
         <Compile Include="ViewController.designer.cs">
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="AnclajeViewController.cs" />
+        <Compile Include="AnclajeViewController.designer.cs">
+          <DependentUpon>AnclajeViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="GravedadViewController.cs" />
+        <Compile Include="GravedadViewController.designer.cs">
+          <DependentUpon>GravedadViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ReboteViewController.cs" />
+        <Compile Include="ReboteViewController.designer.cs">
+          <DependentUpon>ReboteViewController.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Tanjiro.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
