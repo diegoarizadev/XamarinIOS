@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Google.Maps;
 
 namespace _8.GoogleMaps
 {
@@ -9,6 +10,8 @@ namespace _8.GoogleMaps
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+
+        const string MapsApiKey = "AIzaSyBNPPsAxhSdyiEyO-IwqxPUSH7AAdsypQA"; //Credenciales del PAI Key de MAps Google IOS
 
         public override UIWindow Window
         {
@@ -20,6 +23,8 @@ namespace _8.GoogleMaps
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
+            MapServices.ProvideAPIKey(MapsApiKey);//Se le entrega al SDK el API key.
 
             return true;
         }
