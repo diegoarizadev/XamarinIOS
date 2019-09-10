@@ -6,6 +6,7 @@ namespace _9.AnimacionUIKIT
 {
     public partial class GravedadViewController : UIViewController
     {
+        public UIDynamicAnimator Animador { get; set; } //esta variable desencadenara las animaciones.
         public GravedadViewController(IntPtr handle) : base(handle)
         {
         }
@@ -13,14 +14,14 @@ namespace _9.AnimacionUIKIT
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
+
+            Animador = new UIDynamicAnimator(View); //Se asigna a la vista actual.
+
+            Animador.AddBehavior(new UIGravityBehavior(Imagen1));//Se agrega un comportamiento
+
+
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
-        }
     }
 }
 
