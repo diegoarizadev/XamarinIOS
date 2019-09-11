@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.VisorWebyDocumentos", "10.VisorWebyDocumentos.csproj", "{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{7F760482-DA27-4D6A-9F86-E1FEC5A3D36D}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal
