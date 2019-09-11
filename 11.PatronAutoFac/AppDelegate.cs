@@ -1,5 +1,10 @@
 ﻿using Foundation;
 using UIKit;
+using Autofac;
+using _11.PatronAutoFac.Implementaciones;
+using _11.PatronAutoFac.Interfaces;
+using Autofac.Builder;
+using System;
 
 namespace _11.PatronAutoFac
 {
@@ -9,6 +14,8 @@ namespace _11.PatronAutoFac
     public class AppDelegate : UIApplicationDelegate
     {
         // class-level declarations
+
+        static IContainer Container { get; set; }
 
         public override UIWindow Window
         {
@@ -54,6 +61,26 @@ namespace _11.PatronAutoFac
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
         }
+
+
+        public void CreateInstances()
+        {
+            ContainerBuilder builder = new ContainerBuilder();
+
+            builder.RegisterType<CacheMFHelper>().As<ICacheMFHelper>();
+
+            Container = builder.Build(ContainerBuildOptions.None);
+        }
+
+        public static T Resolve<T>()
+        {
+            Console.WriteLine("N0rf3n - Resolve - Begin ");
+            return Container.Resolve<T>();
+            Console.WriteLine("N0rf3n - Resolver - Retrun : " + Container.Resolve<T>());
+            Console.WriteLine("N0rf3n - Resolver - End ");
+        }
+
+
     }
 }
 
