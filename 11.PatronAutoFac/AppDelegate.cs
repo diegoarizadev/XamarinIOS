@@ -27,7 +27,7 @@ namespace _11.PatronAutoFac
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
-
+            this.CreateInstances();
             return true;
         }
 
@@ -63,6 +63,7 @@ namespace _11.PatronAutoFac
         }
 
 
+        //Contenedor
         public void CreateInstances()
         {
             ContainerBuilder builder = new ContainerBuilder();
@@ -75,9 +76,9 @@ namespace _11.PatronAutoFac
         public static T Resolve<T>()
         {
             Console.WriteLine("N0rf3n - Resolve - Begin ");
+            Console.WriteLine("N0rf3n - Resolve - return : " + Container.Resolve<T>());
             return Container.Resolve<T>();
-            Console.WriteLine("N0rf3n - Resolver - Retrun : " + Container.Resolve<T>());
-            Console.WriteLine("N0rf3n - Resolver - End ");
+            
         }
 
 
