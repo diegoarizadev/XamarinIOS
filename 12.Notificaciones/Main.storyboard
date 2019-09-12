@@ -1,27 +1,91 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772" />
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0" />
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ" />
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE" />
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736" />
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCB-pH-rwd">
+                                <rect key="frame" x="86" y="140" width="242" height="30"/>
+                                <state key="normal" title="Notificación Local - Intervalo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQI-Tl-xpi">
+                                <rect key="frame" x="76" y="216" width="263" height="30"/>
+                                <state key="normal" title="Notificación Local - Calendario"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rk-cr-4Fr">
+                                <rect key="frame" x="82" y="552" width="250" height="30"/>
+                                <state key="normal" title="Notificación Local - Respuesta"/>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Wj-xw-szh">
+                                <rect key="frame" x="20" y="291" width="374" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="589984693.66917706">
+                                    <!--2019-09-12 12:38:13 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificaciones - @N0rf3n" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gH-Se-11z">
+                                <rect key="frame" x="30" y="76" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificación...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A72-Dr-U7O">
+                                <rect key="frame" x="20" y="627" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5gH-Se-11z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="1YW-DR-s8Y"/>
+                            <constraint firstItem="A72-Dr-U7O" firstAttribute="top" secondItem="8rk-cr-4Fr" secondAttribute="bottom" constant="45" id="3Vv-xq-t0S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5gH-Se-11z" secondAttribute="trailing" constant="10" id="6aq-xI-3Oa"/>
+                            <constraint firstItem="fCB-pH-rwd" firstAttribute="top" secondItem="5gH-Se-11z" secondAttribute="bottom" constant="43" id="7Nj-V1-UYr"/>
+                            <constraint firstItem="fCB-pH-rwd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="66" id="D3r-5T-9av"/>
+                            <constraint firstItem="A72-Dr-U7O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LpI-pZ-h9N"/>
+                            <constraint firstItem="2Wj-xw-szh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Nv5-ii-CCn"/>
+                            <constraint firstItem="8rk-cr-4Fr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="62" id="Sti-U0-R0m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fCB-pH-rwd" secondAttribute="trailing" constant="66" id="U8N-TT-8pc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A72-Dr-U7O" secondAttribute="bottom" constant="214" id="ZL5-ta-PSP"/>
+                            <constraint firstItem="2Wj-xw-szh" firstAttribute="top" secondItem="bQI-Tl-xpi" secondAttribute="bottom" constant="45" id="Zqi-hW-Ihd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bQI-Tl-xpi" secondAttribute="trailing" constant="55" id="abW-gs-Odn"/>
+                            <constraint firstItem="2Wj-xw-szh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cWs-Fq-MsJ"/>
+                            <constraint firstItem="8rk-cr-4Fr" firstAttribute="top" secondItem="2Wj-xw-szh" secondAttribute="bottom" constant="45" id="gPI-pU-da2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8rk-cr-4Fr" secondAttribute="trailing" constant="62" id="i2I-6C-bbp"/>
+                            <constraint firstItem="5gH-Se-11z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="nKN-Pr-pub"/>
+                            <constraint firstItem="A72-Dr-U7O" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ocX-zO-4qR"/>
+                            <constraint firstItem="bQI-Tl-xpi" firstAttribute="top" secondItem="fCB-pH-rwd" secondAttribute="bottom" constant="46" id="s0n-XW-x46"/>
+                            <constraint firstItem="bQI-Tl-xpi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="56" id="yY8-qJ-oKk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Calendario" destination="2Wj-xw-szh" id="fcp-lW-w4G"/>
+                        <outlet property="btnNotificacionesCalendario" destination="bQI-Tl-xpi" id="MkT-to-OoY"/>
+                        <outlet property="btnNotificacionesIntervalo" destination="fCB-pH-rwd" id="B7C-jD-O0D"/>
+                        <outlet property="btnNotificacionesRespuesta" destination="8rk-cr-4Fr" id="c4f-Lr-lWQ"/>
+                        <outlet property="lblRespuesta" destination="A72-Dr-U7O" id="2EP-Xb-oDc"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder" />
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0" />
+            <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
 </document>

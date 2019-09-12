@@ -123,6 +123,7 @@
     <ItemGroup>
         <None Include="Info.plist" />
         <None Include="Entitlements.plist" />
+        <None Include="Notificacion.gif" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Main.cs" />
