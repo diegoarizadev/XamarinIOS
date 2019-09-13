@@ -1,8 +1,10 @@
 ﻿using Foundation;
 using QuickLook;
+using SafariServices;
 using System;
 using System.Collections.Generic;
 using UIKit;
+using WebKit;
 
 namespace _10.VisorWebyDocumentos
 {
@@ -21,14 +23,52 @@ namespace _10.VisorWebyDocumentos
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
 
+
+            //Botón Web View
+            btnVisorWeb1.TouchUpInside += delegate {
+
+                WKWebView Webview = new WKWebView(View.Frame, new WKWebViewConfiguration()); //una nueva instancia que ocupa toda la pantalla y se le asigna configuración.
+                View.AddSubview(Webview);//Se agrega directamente a la vista.
+                var url = new NSUrl("https://www.raywenderlich.com/ios/");
+                var request = new NSUrlRequest(url);
+                Webview.LoadRequest(request);
+	
+
+	        };
+
+            //Botón Web en Safari Services
+            btnVisorWeb2.TouchUpInside += delegate {
+
+                //Invocar a safiri services o invocar al navegador safari
+                var url = new NSUrl("https://www.raywenderlich.com/4919757-your-first-ios-and-swiftui-app");
+                var safari = new SFSafariViewController(url); //invoca el services de safari.
+                PresentViewController(safari, true, null); //Aqui se invoca al navegador del dispositivo safari services.
+
+
+
+            };
+
+            //Botón Web Safari IOS
+            btnVisorWeb3.TouchUpInside += delegate {
+
+                //Aqui la aplicación queda en segundo plano
+
+                var Url = new NSUrl("https://www.raywenderlich.com/1320561-machine-learning-in-ios");
+                var Opcion = new UIApplicationOpenUrlOptions();
+                Opcion.OpenInPlace = true;
+                UIApplication.SharedApplication.OpenUrl(Url, Opcion, null);
+
+
+            };
+
             btnDocumentos.TouchUpInside += delegate {
 
                 Elementos = new List<Elemento>()
                 {
                     //Instancia a la clase Elemento
-                    new Elemento("Power Point", NSUrl.FromFilename("Docs/PresentacionXamarin.ppt")),
-                    new Elemento("Word", NSUrl.FromFilename("Docs/Docxamarin.docx")),
-                    new Elemento("Excel", NSUrl.FromFilename("Docs/LibroXamarin.xlsx"))
+                    new Elemento("Power Point", NSUrl.FromFilename("Docs/uno.ppt")),
+                    new Elemento("Word", NSUrl.FromFilename("Docs/dos.docx")),
+                    new Elemento("Excel", NSUrl.FromFilename("Docs/tres.xlsx"))
 
                 };
 

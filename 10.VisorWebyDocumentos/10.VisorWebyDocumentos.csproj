@@ -124,6 +124,12 @@
     <ItemGroup>
         <None Include="Info.plist" />
         <None Include="Entitlements.plist" />
+        <None Include="Docs\DocXamarin.doc" />
+        <None Include="Docs\LibroXamarin.xls" />
+        <None Include="Docs\PresentaciónXamarin.px" />
+        <None Include="Docs\tres.xlsx" />
+        <None Include="Docs\dos.docx" />
+        <None Include="Docs\uno.ppt" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Main.cs" />
@@ -132,11 +138,6 @@
         <Compile Include="ViewController.designer.cs">
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="Docs\DocXamarin.docx" />
-      <Content Include="Docs\LibroXamarin.xlsx" />
-      <Content Include="Docs\PresentaciónXamarin.pptx" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
