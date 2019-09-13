@@ -1,5 +1,7 @@
-﻿using Foundation;
+﻿using System;
+using Foundation;
 using UIKit;
+using UserNotifications;
 
 namespace _12.Notificaciones
 {
@@ -20,6 +22,9 @@ namespace _12.Notificaciones
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
+            //Se solicita la autorizacion
+            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (aprobado, error) => { });
 
             return true;
         }
@@ -54,6 +59,8 @@ namespace _12.Notificaciones
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
         }
+
+
     }
 }
 
