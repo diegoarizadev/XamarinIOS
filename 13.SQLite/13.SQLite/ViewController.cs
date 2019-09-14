@@ -18,19 +18,78 @@ namespace _13.SQLite
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
+
+            txtVisor.Text = ""; //Se limpia cada vez que ingrese.
+
+            var Carpeta = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Personal)); //Aqui se guardara la base de datos y las imagenes
+
+            //Se verifica el visor para obtener la informacion de la carpeta donde almacenamos la información.
+            foreach (var archivos in Carpeta)
+            {
+                txtVisor.Text += archivos + Environment.NewLine;
+            }
+
+            SeleccionadorImagen = new UIImagePickerController();
+            SeleccionadorImagen.FinishedPickingMedia += SeleccionImagen;
+            SeleccionadorImagen.Canceled += ImagenCancelada;
+
+            //Validación para identificar si la camara esta diponible.
+            if (UIImagePickerController.IsSourceTypeAvailable
+                (UIImagePickerControllerSourceType.Camera))
+            {
+                SeleccionadorImagen.SourceType =UIImagePickerControllerSourceType.Camera;
+            }
+            else
+            {
+                SeleccionadorImagen.SourceType =UIImagePickerControllerSourceType.PhotoLibrary;
+            }
+
+
+            var rutabase = Environment.GetFolderPath (Environment.SpecialFolder.Personal); //ruta de la base de datos
+            rutabase = Path.Combine(rutabase, "Basen0r.db3"); //Nombre de la base de datos
+            var conexion = new SQLiteConnection(rutabase); //Conexion a la base de datos.
+            conexion.CreateTable<Pasajeros>();//Estrucutra de la tabla.
+
+            btnGuardar.TouchUpInside += delegate
+            {
+                try
+                {
+                    var Insertar = new Pasajeros(); //Instancia de Pasajeros
+                    Insertar.Nombre = txtNombre.Text;
+                    Insertar.Puesto = txtPuesto.Text;
+                    Insertar.Empresa = txtEmpresa.Text;
+                    Insertar.Correo = txtCorreo.Text;
+                    Insertar.Fotografia = txtNombre.Text + ".jpg";
+
+                    conexion.Insert(Insertar); //Inserta el resgistro a la BD
+                    //Se limpia el formulario
+                    txtNombre.Text = "";
+                    txtPuesto.Text = "";
+                    txtCorreo.Text = "";
+                    txtEmpresa.Text = "";
+                    imgImagen.Image = null;
+
+                    MessageBox("Almacenado correctamente", "SQLite");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox("Error", ex.Message);
+                }
+            };
+
+
+            btnFotografia.TouchUpInside +=delegate {
+
+                PresentViewController(SeleccionadorImagen, true, null);
+            };
+
+
         }
 
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
-            txtVisor.Text = ""; //Se limpia cada vez que ingrese.
-
-            var Carpeta = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Personal)); //Aqui se guardara la base de datos y las imagenes
-
-             
-
         }
 
         public void MessageBox(string titulo, string mensaje) //funcion para mostrar alertas
@@ -46,21 +105,17 @@ namespace _13.SQLite
         {
             try
             {
-                var ImagenSeleccionada = e.Info[UIImagePickerController.
-                                                OriginalImage] as UIImage;
-                var rutaImagen = Path.Combine(Environment.GetFolderPath
-                                              (Environment.SpecialFolder.
-                                               Personal),
-                                              txtNombre.Text + ".jpg");
+                var ImagenSeleccionada = e.Info[UIImagePickerController.OriginalImage] as UIImage;//Seleccion de la imagen
+
+                var rutaImagen = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),txtNombre.Text + ".jpg");//ruta de la imagen
+
                 if (File.Exists(rutaImagen))
                 {
                     MessageBox("Aviso:", "La imagen ya existente");
                 }
                 else
                 {
-                    ruta = Environment.GetFolderPath(Environment.
-                                                     SpecialFolder.
-                                                     Personal);
+                    ruta = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
                     ArchivoImagen = Path.Combine(ruta, txtNombre.Text + ".jpg");
                     NSError error;
                     var DatosImagen = ImagenSeleccionada.AsJPEG();
@@ -76,15 +131,22 @@ namespace _13.SQLite
             }
         }
 
+        //Accion para cuando el usuario cancela la camara o fototeca 
+        public void ImagenCancelada(object sender, EventArgs e)
+        {
+            SeleccionadorImagen.DismissViewController(true, null);
+        }
+
     }
 
     //Se crea nueva clase
-    public class Asistentes
+    public class Pasajeros
     {
         public string Nombre { get; set; }
         public string Puesto { get; set; }
         public string Correo { get; set; }
         public string Empresa { get; set; }
+        public string Fotografia { get; set; }
     }
 
 }
