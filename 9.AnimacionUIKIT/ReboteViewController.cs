@@ -6,6 +6,8 @@ namespace _9.AnimacionUIKIT
 {
     public partial class ReboteViewController : UIViewController
     {
+
+        public UIDynamicAnimator Animador { get; set; }
         public ReboteViewController(IntPtr handle) : base(handle)
         {
         }
@@ -13,14 +15,22 @@ namespace _9.AnimacionUIKIT
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
+
+            var Gravedad = new UIGravityBehavior(Imagen1, Imagen2);//Se agrega gravedad a uno de los objectos.
+            var Colision = new UICollisionBehavior(Imagen1, Imagen2)
+            {
+                TranslatesReferenceBoundsIntoBoundary = true
+            };
+
+            var Rebote = new UIDynamicItemBehavior(Imagen2)
+            {
+                Elasticity = 1f
+            };
+            Animador = new UIDynamicAnimator(View);
+            Animador.AddBehaviors(Gravedad, Colision, Rebote);
+
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
-        }
     }
 }
 

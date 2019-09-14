@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.PatronAutoFac", "11.PatronAutoFac.csproj", "{9FF46324-742A-4D83-8296-7E3C02CB563C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{9FF46324-742A-4D83-8296-7E3C02CB563C}.Release|iPhone.Build.0 = Release|iPhone
+	EndGlobalSection
+EndGlobal
