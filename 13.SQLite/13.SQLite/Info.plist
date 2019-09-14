@@ -47,7 +47,7 @@
 	<key>CFBundleName</key>
 	<string>_13.SQLite</string>
 	<key>NSCameraUsageDescription</key>
-	<string>Voy a utilizar tu camara</string>
+	<string>Voy a utilizar tu cámara</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Voy a utilizar la galeria de imágenes</string>
 </dict>

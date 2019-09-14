@@ -79,18 +79,14 @@ namespace _13.SQLite
 
 
             btnFotografia.TouchUpInside +=delegate {
-
+                Console.WriteLine("N0rf3n - btnFotografia - Begin ");
                 PresentViewController(SeleccionadorImagen, true, null);
+                Console.WriteLine("N0rf3n - btnFotografia - End ");
             };
 
 
         }
 
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
-        }
 
         public void MessageBox(string titulo, string mensaje) //funcion para mostrar alertas
         {
@@ -105,10 +101,11 @@ namespace _13.SQLite
         {
             try
             {
+                Console.WriteLine("N0rf3n - SeleccionImagen - Begin ");
                 var ImagenSeleccionada = e.Info[UIImagePickerController.OriginalImage] as UIImage;//Seleccion de la imagen
-
+                Console.WriteLine("N0rf3n - SeleccionImagen - ImagenSeleccionada : " + ImagenSeleccionada);
                 var rutaImagen = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal),txtNombre.Text + ".jpg");//ruta de la imagen
-
+                Console.WriteLine("N0rf3n - SeleccionImagen - rutaImagen : " + rutaImagen);
                 if (File.Exists(rutaImagen))
                 {
                     MessageBox("Aviso:", "La imagen ya existente");
@@ -116,13 +113,17 @@ namespace _13.SQLite
                 else
                 {
                     ruta = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                    Console.WriteLine("N0rf3n - SeleccionImagen - ruta : " + ruta);
                     ArchivoImagen = Path.Combine(ruta, txtNombre.Text + ".jpg");
+                    Console.WriteLine("N0rf3n - SeleccionImagen - txtNombre.Text : " + txtNombre.Text);
+                    Console.WriteLine("N0rf3n - SeleccionImagen - ArchivoImagen : " + ArchivoImagen);
                     NSError error;
                     var DatosImagen = ImagenSeleccionada.AsJPEG();
                     DatosImagen.Save(ArchivoImagen, false, out error);
                     imgImagen.Image = UIImage.FromFile(ArchivoImagen);
                     SeleccionadorImagen.DismissViewController(true, null);
                 }
+                Console.WriteLine("N0rf3n - SeleccionImagen - End ");
             }
             catch (Exception ex)
             {
