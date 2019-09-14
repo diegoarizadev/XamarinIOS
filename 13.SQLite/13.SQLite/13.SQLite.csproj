@@ -138,6 +138,10 @@
         <Compile Include="ConcentradorViewController.designer.cs">
           <DependentUpon>ConcentradorViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="DetalleViewController.cs" />
+        <Compile Include="DetalleViewController.designer.cs">
+          <DependentUpon>DetalleViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

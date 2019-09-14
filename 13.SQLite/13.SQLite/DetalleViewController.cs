@@ -1,0 +1,30 @@
+﻿using System;
+
+using UIKit;
+
+namespace _13.SQLite
+{
+    public partial class DetalleViewController : UIViewController
+    {
+        public DetalleViewController() : base("DetalleViewController", null)
+        {
+        }
+
+        protected DetalleViewController(IntPtr handle) : base(handle)
+        {
+        }
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            // Perform any additional setup after loading the view, typically from a nib.
+        }
+
+        public override void DidReceiveMemoryWarning()
+        {
+            base.DidReceiveMemoryWarning();
+            // Release any cached data, images, etc that aren't in use.
+        }
+    }
+}
+
