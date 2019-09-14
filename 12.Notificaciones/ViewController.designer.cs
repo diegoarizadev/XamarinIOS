@@ -19,7 +19,7 @@ namespace _12.Notificaciones
 		UIKit.UIButton btnNotificacionesIntervalo { get; set; }
 
 		[Outlet]
-		UIKit.UIButton btnNotificacionesSRespuesta { get; set; }
+		UIKit.UIButton btnNotificacionesRespuesta { get; set; }
 
 		[Outlet]
 		UIKit.UIDatePicker Calendario { get; set; }
@@ -29,9 +29,9 @@ namespace _12.Notificaciones
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btnNotificacionesSRespuesta != null) {
-				btnNotificacionesSRespuesta.Dispose ();
-				btnNotificacionesSRespuesta = null;
+			if (btnNotificacionesIntervalo != null) {
+				btnNotificacionesIntervalo.Dispose ();
+				btnNotificacionesIntervalo = null;
 			}
 
 			if (btnNotificacionesCalendario != null) {
@@ -39,19 +39,19 @@ namespace _12.Notificaciones
 				btnNotificacionesCalendario = null;
 			}
 
-			if (btnNotificacionesIntervalo != null) {
-				btnNotificacionesIntervalo.Dispose ();
-				btnNotificacionesIntervalo = null;
-			}
-
-			if (Calendario != null) {
-				Calendario.Dispose ();
-				Calendario = null;
+			if (btnNotificacionesRespuesta != null) {
+				btnNotificacionesRespuesta.Dispose ();
+				btnNotificacionesRespuesta = null;
 			}
 
 			if (lblRespuesta != null) {
 				lblRespuesta.Dispose ();
 				lblRespuesta = null;
+			}
+
+			if (Calendario != null) {
+				Calendario.Dispose ();
+				Calendario = null;
 			}
 		}
 	}
