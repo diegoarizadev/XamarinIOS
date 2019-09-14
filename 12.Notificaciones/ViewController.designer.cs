@@ -29,14 +29,14 @@ namespace _12.Notificaciones
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btnNotificacionesIntervalo != null) {
-				btnNotificacionesIntervalo.Dispose ();
-				btnNotificacionesIntervalo = null;
-			}
-
 			if (btnNotificacionesCalendario != null) {
 				btnNotificacionesCalendario.Dispose ();
 				btnNotificacionesCalendario = null;
+			}
+
+			if (btnNotificacionesIntervalo != null) {
+				btnNotificacionesIntervalo.Dispose ();
+				btnNotificacionesIntervalo = null;
 			}
 
 			if (btnNotificacionesRespuesta != null) {
@@ -44,14 +44,14 @@ namespace _12.Notificaciones
 				btnNotificacionesRespuesta = null;
 			}
 
-			if (lblRespuesta != null) {
-				lblRespuesta.Dispose ();
-				lblRespuesta = null;
-			}
-
 			if (Calendario != null) {
 				Calendario.Dispose ();
 				Calendario = null;
+			}
+
+			if (lblRespuesta != null) {
+				lblRespuesta.Dispose ();
+				lblRespuesta = null;
 			}
 		}
 	}
