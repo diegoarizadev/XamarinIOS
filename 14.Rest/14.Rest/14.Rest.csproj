@@ -3,12 +3,12 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-        <ProjectGuid>{6768F59B-8064-4F31-A7A4-4AB64CB5B205}</ProjectGuid>
+        <ProjectGuid>{9687336A-AA13-4CA2-9988-833163F3C1EB}</ProjectGuid>
         <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <TemplateGuid>{edc1b0fa-90cd-4038-8fad-98fe74adb368}</TemplateGuid>
         <OutputType>Exe</OutputType>
-        <RootNamespace>_13.SQLite</RootNamespace>
-        <AssemblyName>_13.SQLite</AssemblyName>
+        <RootNamespace>_14.Rest</RootNamespace>
+        <AssemblyName>_14.Rest</AssemblyName>
         <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
         <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
         <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
@@ -68,9 +68,6 @@
     </ItemGroup>
     <ItemGroup>
       <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
-      <PackageReference Include="sqlite-net-pcl">
-        <Version>1.5.231</Version>
-      </PackageReference>
     </ItemGroup>
     <ItemGroup>
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -133,14 +130,6 @@
         <Compile Include="ViewController.cs" />
         <Compile Include="ViewController.designer.cs">
             <DependentUpon>ViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="ConcentradorViewController.cs" />
-        <Compile Include="ConcentradorViewController.designer.cs">
-          <DependentUpon>ConcentradorViewController.cs</DependentUpon>
-        </Compile>
-        <Compile Include="DetalleViewController.cs" />
-        <Compile Include="DetalleViewController.designer.cs">
-          <DependentUpon>DetalleViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
