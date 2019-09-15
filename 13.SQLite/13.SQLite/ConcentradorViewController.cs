@@ -47,7 +47,7 @@ namespace _13.SQLite
                     Lista.Add(new Pasajeros //Se agragan los datos a la lista
                     {
                         Nombre = fila.Nombre,
-                        Puesto = fila.Puesto,
+                        Empresa = fila.Empresa,
                         Fotografia = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), fila.Fotografia) //apunta a la fotografia del path
                     });
 
@@ -71,11 +71,8 @@ namespace _13.SQLite
 
         public void MessageBox(string titulo, string mensaje)
         {
-            Alerta = UIAlertController.Create(titulo, mensaje,
-                                              UIAlertControllerStyle.Alert);
-            Alerta.AddAction(UIAlertAction.Create("Aceptar",
-                                                  UIAlertActionStyle.Default,
-                                                  null));
+            Alerta = UIAlertController.Create(titulo, mensaje,UIAlertControllerStyle.Alert);
+            Alerta.AddAction(UIAlertAction.Create("Aceptar",UIAlertActionStyle.Default,null));
             PresentViewController(Alerta, true, null);
         }
 
@@ -148,6 +145,17 @@ namespace _13.SQLite
         {
             return ElementosTabla.Count;
         }
+
+
+        //Cuando el usuario seleccione el registro, se extrae el nombre del inidice y crear la instancia al DetalleViewController
+        public override void RowSelected(UITableView tableView,NSIndexPath indexPath)
+        {
+            Nombre = ElementosTabla[indexPath.Row].Nombre;
+            var detalle = Controlador.Storyboard.InstantiateViewController("DetalleViewController") as DetalleViewController; //DetalleController es el ID del Storyboard
+            detalle.Indice = Nombre; //Se envia al ViewController de detalle
+            Controlador.PresentViewControllerAsync(detalle, true); //Se invoca el controlador.
+        }
+
     }
 }
 
