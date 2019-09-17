@@ -1,27 +1,142 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772" />
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0" />
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ" />
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE" />
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736" />
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consumo de servicio 🕶REST🥽" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DW-ld-IEm">
+                                <rect key="frame" x="22" y="86" width="374" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBx-oS-aPv">
+                                <rect key="frame" x="22" y="143.5" width="374" height="151"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Localidad : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vja-TV-WwA">
+                                        <rect key="frame" x="8" y="8" width="358" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCq-Ec-fTC">
+                                        <rect key="frame" x="8" y="36" width="358" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperatura : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-Z3-wJW">
+                                        <rect key="frame" x="8" y="44" width="358" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMJ-IQ-2aB">
+                                        <rect key="frame" x="8" y="72" width="358" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humedad : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3FH-ag-HXW">
+                                        <rect key="frame" x="8" y="80" width="358" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qef-9m-ScY">
+                                        <rect key="frame" x="8" y="108" width="358" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condiciones : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JV4-So-wrS">
+                                        <rect key="frame" x="8" y="116" width="358" height="20"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gA-cq-O2b">
+                                        <rect key="frame" x="8" y="144" width="358" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9gA-cq-O2b" secondAttribute="bottom" constant="7" id="0Vh-3E-JqI"/>
+                                    <constraint firstItem="JqS-Z3-wJW" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="4ii-7O-RTY"/>
+                                    <constraint firstItem="JV4-So-wrS" firstAttribute="top" secondItem="Qef-9m-ScY" secondAttribute="bottom" constant="8" id="6g6-3T-iMk"/>
+                                    <constraint firstItem="Qef-9m-ScY" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="7YW-sk-KR3"/>
+                                    <constraint firstItem="MMJ-IQ-2aB" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="8Yu-pT-s5n"/>
+                                    <constraint firstAttribute="trailing" secondItem="JqS-Z3-wJW" secondAttribute="trailing" constant="8" id="A3c-P6-O67"/>
+                                    <constraint firstAttribute="trailing" secondItem="9gA-cq-O2b" secondAttribute="trailing" constant="8" id="AJ8-1i-aKZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="3FH-ag-HXW" secondAttribute="trailing" constant="8" id="Bs8-Zp-Xyj"/>
+                                    <constraint firstItem="JV4-So-wrS" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="Ey5-Fy-FO0"/>
+                                    <constraint firstItem="MMJ-IQ-2aB" firstAttribute="top" secondItem="JqS-Z3-wJW" secondAttribute="bottom" constant="8" id="Fb2-WC-ON6"/>
+                                    <constraint firstItem="9gA-cq-O2b" firstAttribute="top" secondItem="JV4-So-wrS" secondAttribute="bottom" constant="8" id="Gyq-hJ-qy3"/>
+                                    <constraint firstAttribute="trailing" secondItem="JV4-So-wrS" secondAttribute="trailing" constant="8" id="IgX-vQ-J6x"/>
+                                    <constraint firstItem="9gA-cq-O2b" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="Kmz-Ni-Eww"/>
+                                    <constraint firstItem="JqS-Z3-wJW" firstAttribute="top" secondItem="ZCq-Ec-fTC" secondAttribute="bottom" constant="8" id="NYd-Wf-kC9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qef-9m-ScY" secondAttribute="trailing" constant="8" id="QEn-7h-nDD"/>
+                                    <constraint firstItem="ZCq-Ec-fTC" firstAttribute="top" secondItem="Vja-TV-WwA" secondAttribute="bottom" constant="8" id="RsE-nz-108"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vja-TV-WwA" secondAttribute="trailing" constant="8" id="Tj2-dD-6c6"/>
+                                    <constraint firstItem="Vja-TV-WwA" firstAttribute="top" secondItem="IBx-oS-aPv" secondAttribute="top" constant="8" id="XCz-pI-bGf"/>
+                                    <constraint firstItem="ZCq-Ec-fTC" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="dFH-g2-uZu"/>
+                                    <constraint firstItem="Vja-TV-WwA" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="eOJ-hy-sXM"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZCq-Ec-fTC" secondAttribute="trailing" constant="8" id="lB4-Bx-xkT"/>
+                                    <constraint firstItem="3FH-ag-HXW" firstAttribute="leading" secondItem="IBx-oS-aPv" secondAttribute="leading" constant="8" id="m3C-RZ-fUx"/>
+                                    <constraint firstItem="Qef-9m-ScY" firstAttribute="top" secondItem="3FH-ag-HXW" secondAttribute="bottom" constant="8" id="rKQ-3s-18t"/>
+                                    <constraint firstAttribute="trailing" secondItem="MMJ-IQ-2aB" secondAttribute="trailing" constant="8" id="rev-KZ-aCU"/>
+                                    <constraint firstItem="3FH-ag-HXW" firstAttribute="top" secondItem="MMJ-IQ-2aB" secondAttribute="bottom" constant="8" id="wM1-sj-ddZ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-jl-fdS">
+                                <rect key="frame" x="96" y="331" width="223" height="30"/>
+                                <state key="normal" title="Consultar Clima"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7DW-ld-IEm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="7C0-zN-eCu"/>
+                            <constraint firstItem="IBx-oS-aPv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="2" id="7p1-0y-lQA"/>
+                            <constraint firstItem="FJQ-jl-fdS" firstAttribute="top" secondItem="IBx-oS-aPv" secondAttribute="bottom" constant="36.5" id="AgL-Hh-g9x"/>
+                            <constraint firstItem="7DW-ld-IEm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="2" id="D6Q-WN-Xg0"/>
+                            <constraint firstItem="7DW-ld-IEm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="Qxy-Oa-kG1"/>
+                            <constraint firstItem="IBx-oS-aPv" firstAttribute="top" secondItem="7DW-ld-IEm" secondAttribute="bottom" constant="35" id="brg-6B-xtX"/>
+                            <constraint firstItem="IBx-oS-aPv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="eXt-2U-6w0"/>
+                            <constraint firstItem="FJQ-jl-fdS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="76" id="imb-UV-dm6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FJQ-jl-fdS" secondAttribute="trailing" constant="75" id="tgH-ub-jBC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnConsultarClima" destination="FJQ-jl-fdS" id="rD8-Cw-Lex"/>
+                        <outlet property="lblCondiciones" destination="9gA-cq-O2b" id="WRe-qb-lGj"/>
+                        <outlet property="lblHumedad" destination="Qef-9m-ScY" id="008-Iy-VXB"/>
+                        <outlet property="lblLocalidad" destination="ZCq-Ec-fTC" id="j8I-G0-1l2"/>
+                        <outlet property="lblTemperatura" destination="MMJ-IQ-2aB" id="y3w-zq-Rqm"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder" />
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0" />
+            <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
 </document>
