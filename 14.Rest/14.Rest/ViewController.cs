@@ -1,4 +1,4 @@
-﻿using Foundation;
+﻿
 using System;
 using UIKit;
 using System.Json;
@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 using Plugin.Geolocator;
-using System.Security.Policy;
+using Newtonsoft.Json;
 
 namespace _14.Rest
 {
     public partial class ViewController : UIViewController
     {
         double latitud, longitud;
+        WebResponse response;
+        private JsonValue jsondoc;
+
+
         public ViewController(IntPtr handle) : base(handle)
         {
         }
@@ -46,8 +50,10 @@ namespace _14.Rest
 
                 var ServicioREST = "http://api.geonames.org/findNearByWeatherJSON?lat=" +latitud + "&lng=" + longitud + "&username=enrique.aguilar"; //ruta del servicio
                 Console.WriteLine("N0rf3n - btnConsultarClima - ServicioREST : "+ ServicioREST);
-                JsonValue json = await TraerClima(ServicioREST);
-                Transformar(json);
+                Clima p = await TraerClima(ServicioREST);
+                // Close the response.  
+                response.Close();
+                Transformar(p);
 
                 Console.WriteLine("N0rf3n - btnConsultarClima - End ");
 
@@ -59,45 +65,118 @@ namespace _14.Rest
         }
 
 
-        public async Task<JsonValue> TraerClima(string ServicioREST)
+        public async Task<Clima> TraerClima(string ServicioREST)
         {
             Console.WriteLine("N0rf3n - TraerClima - Begin ");
             Console.WriteLine("N0rf3n - TraerClima - ServicioREST : " + ServicioREST);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri(ServicioREST));//consumir el servicio.
-            //WebRequest request = WebRequest.Create(new Uri(ServicioREST));//consumir el servicio.
-            Console.WriteLine("N0rf3n - TraerClima - request : "+ request);
-            request.ContentType = "application/json";//Tipo de consumo
-            request.Method = "GET/POST";//metodo de consumo
-            using (WebResponse response = await request.GetResponseAsync())//A la espera del response con el request
-            {
 
-                using (Stream stream = response.GetResponseStream())//Carga los datos del request
+            // Create a request for the URL.   
+            WebRequest request = WebRequest.Create(ServicioREST);
+
+            // Get the response.  
+            response = request.GetResponse();
+
+            // Display the status.  
+            Console.WriteLine("N0rf3n - TraerClima -  : status" + ((HttpWebResponse)response).StatusDescription);
+
+            // Get the stream containing content returned by the server. 
+            // The using block ensures the stream is automatically closed. 
+            using (Stream dataStream = response.GetResponseStream())
+            {
+                // Open the stream using a StreamReader for easy access.  
+                StreamReader reader = new StreamReader(dataStream);
+                // Read the content.  
+                string responseFromServer = reader.ReadToEnd();
+
+                // Display the content.  
+                Console.WriteLine("N0rf3n - TraerClima - responseFromServer : " + responseFromServer);
+
+                //Deserializa el objecto JSon de la respuesta del sW
+                Clima c = await Task.Run(() => JsonConvert.DeserializeObject<Clima>(responseFromServer));
+
+                
+                Console.WriteLine("N0rf3n - TraerClima -  : " + c.WeatherObservation.elevation);
+                Console.WriteLine("N0rf3n - TraerClima -  : " + c.WeatherObservation.lng);
+                Console.WriteLine("N0rf3n - TraerClima -  : " + c.WeatherObservation.observation);
+                Console.WriteLine("N0rf3n - TraerClima -  : " + c.WeatherObservation.ICAO);
+                Console.WriteLine("N0rf3n - TraerClima -  : " + c.WeatherObservation.clouds);
+                Console.WriteLine("N0rf3n - TraerClima -  : " + c.WeatherObservation.dewPoint);
+
+                return c;
+
+            }
+        }
+
+        /*Funcion original... no me sirvio.!
+               public async Task<JsonValue> TraerClima(string ServicioREST)
+        {
+            var request = (HttpWebRequest)WebRequest.Create
+                                                    (new Uri(ServicioREST));
+            request.ContentType = "application/json";
+            request.Method = "GET";
+            using (WebResponse response = await request.GetResponseAsync())
+            {
+                using (Stream stream = response.GetResponseStream())
                 {
-                    var jsondoc = await Task.Run(() => JsonValue.Load(stream));//Parseo directo del String
-                    Console.WriteLine("N0rf3n - TraerClima - jsondoc : "+ jsondoc);
-                    Console.WriteLine("N0rf3n - TraerClima - End ");
+                    var jsondoc = await Task.Run(() => 
+                                        JsonValue.Load(stream));
                     return jsondoc;
                 }
             }
         }
-
-
+         */
 
         //toma la respuesta o request del servio para colocarlo en el viewController
-        public void Transformar(JsonValue json)
+        public void Transformar(Clima climaco)
         {
             Console.WriteLine("N0rf3n - Transformar - Begin ");
-            Console.WriteLine("N0rf3n - Transformar - json :  "+ json);
-            var Resultados = json["weatherObservation"];
-            lblLocalidad.Text = Resultados["stationName"];
-            var temperatura = Resultados["temperature"];
+            lblLocalidad.Text = climaco.WeatherObservation.stationName;
+            var temperatura = climaco.WeatherObservation.temperature; 
             lblTemperatura.Text = string.Format("{0}", temperatura) + "C";
-            var Humedad = Resultados["humidity"];
+            var Humedad = climaco.WeatherObservation.seaLevelPressure;
             lblHumedad.Text = Humedad.ToString() + "%";
-            var Nubes = Resultados["clouds"];
-            var Condiciones = Resultados["weatherCondition"];
+            var Nubes = climaco.WeatherObservation.clouds;
+            var Condiciones = climaco.WeatherObservation.weatherCondition;
             lblCondiciones.Text = Nubes + ", " + Condiciones;
             Console.WriteLine("N0rf3n - Transformar - End ");
         }
+    }
+
+
+    //Se escriben las clases para la deserialización de la respuesta del servicio.
+    public  class Clima
+    {
+        public WeatherObservation WeatherObservation { get; set; }
+    }
+
+    public class WeatherObservation
+    {
+
+        public long elevation { get; set; }
+
+        public double lng { get; set; }
+
+        public string observation { get; set; }
+
+        public string ICAO { get; set; }
+
+        public string clouds { get; set; }
+
+        public string dewPoint { get; set; }
+
+        public DateTimeOffset datetime { get; set; }
+
+        public double seaLevelPressure { get; set; }
+
+        public string countryCode { get; set; }
+
+        public string temperature { get; set; }
+
+        public string stationName { get; set; }
+
+        public string weatherCondition { get; set; }
+
+        public double lat { get; set; }
+
     }
 }
