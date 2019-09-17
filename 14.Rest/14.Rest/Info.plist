@@ -47,26 +47,26 @@
 	<key>CFBundleName</key>
 	<string>_14.Rest</string>
 	<key>NSAppTransportSecurity</key>
-	    <dict>
-	        <key>NSAllowsArbitraryLoads</key>
-	        <true/>
-	        <key>NSExceptionDomains</key>
-	        <dict>
-	            <key>mojepanstwo.pl</key>
-	            <dict>
-	                <key>NSIncludesSubdomains</key>
-	                <true/>
-	                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-	                <true/>
-	            </dict>
-	        </dict>
-	    </dict>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>mojepanstwo.pl</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to location when open.</string>
+	<string>Esta aplicación necesita acceso a la ubicación cuando está abierta.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This app needs access to location when in the background.</string>
+	<string>Esta aplicación necesita acceso a la ubicación cuando está en segundo plano.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>This app needs access to location when open and in the background.</string>
+	<string>Esta aplicación necesita acceso a la ubicación cuando está abierta y en segundo plano.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
