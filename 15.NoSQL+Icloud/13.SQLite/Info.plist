@@ -45,7 +45,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleName</key>
-	<string>_13.SQLite</string>
+	<string>_15.NoSQLICloud</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Voy a utilizar tu cámara</string>
 	<key>NSPhotoLibraryUsageDescription</key>

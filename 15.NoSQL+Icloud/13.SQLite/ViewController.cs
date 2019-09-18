@@ -32,7 +32,13 @@ namespace _13.SQLite
                 try
                 {
 
-                    var CuentaAlmacenamiento = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;AccountName=almacenaenriqueaguilar;AccountKey=uGbhDArj46DRfEvv47bLhgS775SocE94R7sq9VHiA03ss7ODcy+RwgQ7AIs/E6Ak68Y+K0MNPx6B2Y90JEH2hw==;EndpointSuffix=core.windows.net");
+                    Console.WriteLine("N0rf3n - btnGuardar - Begin ");
+
+                    var CuentaAlmacenamiento = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;" +
+                        "AccountName=n0rf3n;" +
+                        "AccountKey=B7vZmPhmDtkKFQqcK9fVPClPUEnDuH6U31ntI5mNv6467t5jivYyPHVWklp+zmYNj4J2iTRlSxKrcs9Ngt8UVg==;" +
+                        "EndpointSuffix=core.windows.net");
+
                     var ClienteTabla = CuentaAlmacenamiento.CreateCloudTableClient();
                     var Tabla = ClienteTabla.GetTableReference("Pasajeros"); //Se le signa una referencia de la tabla.
                     bool x = await Tabla.CreateIfNotExistsAsync(); //Si la tabla no existe la crea.
@@ -45,12 +51,21 @@ namespace _13.SQLite
                     await Tabla.ExecuteAsync(Insertar); //realiza el insert
                     MessageBox("Guardado en Azure", " Tabla NoSQL");
 
-
+                    //Creamos el cliente del Blob Storage.
                     var clienteBlob = CuentaAlmacenamiento.CreateCloudBlobClient(); //Se crea una bd para almacenar archivos grandes.
+                    //Crearemos el contenedor del Blob
                     var contenedor = clienteBlob.GetContainerReference("imagenes"); //contenedor de la información
+                    //Nos aseguraremos de crear el contenedor si no existe. 
+                    await contenedor.CreateIfNotExistsAsync();
+                    //Obtenemos un bloque del blob
                     var recursoblob = contenedor.GetBlockBlobReference(txtNombre.Text + ".jpg");
+                    Console.WriteLine("N0rf3n - btnGuardar - ruta :  "+ ruta);
+                    ruta += "/"+txtNombre.Text + ".jpg";
+                    Console.WriteLine("N0rf3n - btnGuardar - rutaNew :  " + ruta);
+                    //Subimos el archivo a Azure
                     await recursoblob.UploadFromFileAsync(ruta); //SEalmacena la imagen.
                     MessageBox("Guardado en", "Azure Storage Blobs");
+
 
                     //Se limpia las cajas de texto e imagen,
                     txtNombre.Text = "";
@@ -58,6 +73,8 @@ namespace _13.SQLite
                     txtCorreo.Text = "";
                     txtEmpresa.Text = "";
                     imgImagen.Image = null;
+
+                    Console.WriteLine("N0rf3n - btnGuardar - End ");
 
                 }
                 catch (Exception ex)
