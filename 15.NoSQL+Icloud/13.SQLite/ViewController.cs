@@ -3,6 +3,8 @@ using System;
 using UIKit;
 using System.IO;
 using SQLite;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Table;
 
 namespace _13.SQLite
 {
@@ -19,15 +21,67 @@ namespace _13.SQLite
         {
             base.ViewDidLoad();
 
-            txtVisor.Text = ""; //Se limpia cada vez que ingrese.
+            btnFotografia.TouchUpInside += delegate {
+                Console.WriteLine("N0rf3n - btnFotografia - Begin ");
+                PresentViewController(SeleccionadorImagen, true, null);
+                Console.WriteLine("N0rf3n - btnFotografia - End ");
+            };
 
-            var Carpeta = Directory.GetFiles(Environment.GetFolderPath(Environment.SpecialFolder.Personal)); //Aqui se guardara la base de datos y las imagenes
-
-            //Se verifica el visor para obtener la informacion de la carpeta donde almacenamos la información.
-            foreach (var archivos in Carpeta)
+            btnGuardar.TouchUpInside += async delegate
             {
-                txtVisor.Text += archivos + Environment.NewLine;
-            }
+                try
+                {
+
+                    Console.WriteLine("N0rf3n - btnGuardar - Begin ");
+
+                    var CuentaAlmacenamiento = CloudStorageAccount.Parse("DefaultEndpointsProtocol=https;" +
+                        "AccountName=n0rf3n;" +
+                        "AccountKey=B7vZmPhmDtkKFQqcK9fVPClPUEnDuH6U31ntI5mNv6467t5jivYyPHVWklp+zmYNj4J2iTRlSxKrcs9Ngt8UVg==;" +
+                        "EndpointSuffix=core.windows.net");
+
+                    var ClienteTabla = CuentaAlmacenamiento.CreateCloudTableClient();
+                    var Tabla = ClienteTabla.GetTableReference("Pasajeros"); //Se le signa una referencia de la tabla.
+                    bool x = await Tabla.CreateIfNotExistsAsync(); //Si la tabla no existe la crea.
+                    var pasajero = new Pasajeros("Registro", txtNombre.Text); // Se crea una nueva instancia, mando como parametro "registro" y como clave el valor digitado en el campo.
+                    pasajero.Empresa = txtEmpresa.Text;
+                    pasajero.Puesto = txtPuesto.Text;
+                    pasajero.Correo = txtCorreo.Text;
+                    pasajero.Fotografia = txtNombre.Text + ".jpg";
+                    TableOperation Insertar = TableOperation.Insert(pasajero); //Se crea una operación para realizar el insert.
+                    await Tabla.ExecuteAsync(Insertar); //realiza el insert
+                    MessageBox("Guardado en Azure", " Tabla NoSQL");
+
+                    //Creamos el cliente del Blob Storage.
+                    var clienteBlob = CuentaAlmacenamiento.CreateCloudBlobClient(); //Se crea una bd para almacenar archivos grandes.
+                    //Crearemos el contenedor del Blob
+                    var contenedor = clienteBlob.GetContainerReference("imagenes"); //contenedor de la información
+                    //Nos aseguraremos de crear el contenedor si no existe. 
+                    await contenedor.CreateIfNotExistsAsync();
+                    //Obtenemos un bloque del blob
+                    var recursoblob = contenedor.GetBlockBlobReference(txtNombre.Text + ".jpg");
+                    Console.WriteLine("N0rf3n - btnGuardar - ruta :  "+ ruta);
+                    ruta += "/"+txtNombre.Text + ".jpg";
+                    Console.WriteLine("N0rf3n - btnGuardar - rutaNew :  " + ruta);
+                    //Subimos el archivo a Azure
+                    await recursoblob.UploadFromFileAsync(ruta); //SEalmacena la imagen.
+                    MessageBox("Guardado en", "Azure Storage Blobs");
+
+
+                    //Se limpia las cajas de texto e imagen,
+                    txtNombre.Text = "";
+                    txtPuesto.Text = "";
+                    txtCorreo.Text = "";
+                    txtEmpresa.Text = "";
+                    imgImagen.Image = null;
+
+                    Console.WriteLine("N0rf3n - btnGuardar - End ");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox("Error", ex.Message);
+                }
+            };
 
             SeleccionadorImagen = new UIImagePickerController();
             SeleccionadorImagen.FinishedPickingMedia += SeleccionImagen;
@@ -37,55 +91,15 @@ namespace _13.SQLite
             if (UIImagePickerController.IsSourceTypeAvailable
                 (UIImagePickerControllerSourceType.Camera))
             {
-                SeleccionadorImagen.SourceType =UIImagePickerControllerSourceType.Camera;
+                SeleccionadorImagen.SourceType = UIImagePickerControllerSourceType.Camera;
             }
             else
             {
-                SeleccionadorImagen.SourceType =UIImagePickerControllerSourceType.PhotoLibrary;
+                SeleccionadorImagen.SourceType = UIImagePickerControllerSourceType.PhotoLibrary;
             }
-
-
-            var rutabase = Environment.GetFolderPath (Environment.SpecialFolder.Personal); //ruta de la base de datos
-            rutabase = Path.Combine(rutabase, "Basen0r.db3"); //Nombre de la base de datos
-            var conexion = new SQLiteConnection(rutabase); //Conexion a la base de datos.
-            conexion.CreateTable<Pasajeros>();//Estrucutra de la tabla.
-
-            btnGuardar.TouchUpInside += delegate
-            {
-                try
-                {
-                    var Insertar = new Pasajeros(); //Instancia de Pasajeros
-                    Insertar.Nombre = txtNombre.Text;
-                    Insertar.Puesto = txtPuesto.Text;
-                    Insertar.Empresa = txtEmpresa.Text;
-                    Insertar.Correo = txtCorreo.Text;
-                    Insertar.Fotografia = txtNombre.Text + ".jpg";
-
-                    conexion.Insert(Insertar); //Inserta el resgistro a la BD
-                    //Se limpia el formulario
-                    txtNombre.Text = "";
-                    txtPuesto.Text = "";
-                    txtCorreo.Text = "";
-                    txtEmpresa.Text = "";
-                    imgImagen.Image = null;
-
-                    MessageBox("Almacenado correctamente", "SQLite");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox("Error", ex.Message);
-                }
-            };
-
-
-            btnFotografia.TouchUpInside +=delegate {
-                Console.WriteLine("N0rf3n - btnFotografia - Begin ");
-                PresentViewController(SeleccionadorImagen, true, null);
-                Console.WriteLine("N0rf3n - btnFotografia - End ");
-            };
-
-
         }
+
+
 
 
         public void MessageBox(string titulo, string mensaje) //funcion para mostrar alertas
@@ -141,9 +155,13 @@ namespace _13.SQLite
     }
 
     //Se crea nueva clase
-    public class Pasajeros
+    public class Pasajeros: TableEntity
     {
-        public string Nombre { get; set; }
+        public Pasajeros(string Registros, string Nombre)//recibe la clave de partición y la clave de reglon, son datos fundamentales para una tabla NoSQL
+        {
+            PartitionKey = Registros; //Clave de partición
+            RowKey = Nombre; //Clave de renglon
+        }
         public string Puesto { get; set; }
         public string Correo { get; set; }
         public string Empresa { get; set; }
