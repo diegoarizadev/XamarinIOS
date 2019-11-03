@@ -117,10 +117,12 @@
         <Folder Include="Resources\" />
         <Folder Include="Model\" />
         <Folder Include="Resources\Images\" />
+        <Folder Include="ViewControllers\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
         <InterfaceDefinition Include="Main.storyboard" />
+        <InterfaceDefinition Include="ViewControllers\MenuTableViewController.xib" />
     </ItemGroup>
     <ItemGroup>
         <None Include="Info.plist" />
@@ -135,6 +137,10 @@
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
         <Compile Include="Model\Constants.cs" />
+        <Compile Include="ViewControllers\MenuTableViewController.cs" />
+        <Compile Include="ViewControllers\MenuTableViewController.designer.cs">
+          <DependentUpon>MenuTableViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\Images\down_arrow.png" />
