@@ -6,23 +6,22 @@ namespace _18.Slidingmenu.ViewControllers
 {
     public partial class MenuTableViewController : UITableViewCell
     {
-        public static readonly UINib Nib = UINib.FromName("MenuTableViewController", NSBundle.MainBundle);
-
         public static readonly NSString Key = new NSString("MenuTableViewController");
+        public static readonly UINib Nib;
 
         public MenuTableViewController(IntPtr handle) : base(handle)
         {
             Console.WriteLine("N0rf3n - MenuTableViewController - MenuTableViewController");
         }
 
-        public static MenuTableViewController Create()
+        static MenuTableViewController()
         {
-            Console.WriteLine("N0rf3n - MenuTableViewController - MenuTableViewController - Create");
-            return (MenuTableViewController)Nib.Instantiate(null, null)[0];
-           
+            Console.WriteLine("N0rf3n - MenuTableViewController - Begin");
+            Nib = UINib.FromName("MenuTableViewController", NSBundle.MainBundle);
+            Console.WriteLine("N0rf3n - MenuTableViewController -  End");
         }
 
-        internal void BindData(string strLabel, string strIconPath)
+        internal void BindData(String strLabel, String strIconPath)
         {
             Console.WriteLine("N0rf3n - MenuTableViewController - BindData - Begin ");
             Console.WriteLine("N0rf3n - MenuTableViewController - BindData - strLabel :  "+ strLabel);
