@@ -16,7 +16,7 @@ namespace _18.Slidingmenu.ViewControllers
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView image { get; set; }
+        UIKit.UIImageView imagen { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -24,9 +24,9 @@ namespace _18.Slidingmenu.ViewControllers
 
         void ReleaseDesignerOutlets ()
         {
-            if (image != null) {
-                image.Dispose ();
-                image = null;
+            if (imagen != null) {
+                imagen.Dispose ();
+                imagen = null;
             }
 
             if (lblTexto != null) {

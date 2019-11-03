@@ -141,7 +141,7 @@
         <Compile Include="ViewControllers\MenuTableViewController.designer.cs">
           <DependentUpon>MenuTableViewController.cs</DependentUpon>
         </Compile>
-        <Compile Include="Model\MenuTableSourceClass.cs" />
+        <Compile Include="Model\MenuTableSource.cs" />
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="Resources\Images\down_arrow.png" />
