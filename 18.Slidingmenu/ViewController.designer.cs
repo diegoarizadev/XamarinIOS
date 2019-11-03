@@ -11,8 +11,19 @@ using UIKit;
 
 namespace _18.Slidingmenu
 {
-    [Register("ViewController")]
+    [Register ("ViewController")]
     partial class ViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView tableViewMenu { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (tableViewMenu != null) {
+                tableViewMenu.Dispose ();
+                tableViewMenu = null;
+            }
+        }
     }
 }
