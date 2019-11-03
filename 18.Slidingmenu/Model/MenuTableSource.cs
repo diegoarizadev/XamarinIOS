@@ -22,7 +22,7 @@ namespace _18.Slidingmenu.Model
         public override UITableViewCell GetCell(UITableView tableView, Foundation.NSIndexPath indexPath)
         {
             Console.WriteLine("N0rf3n - MenuTableSource - UITableViewCell - Begin");
-            MenuTableViewController cell = tableView.DequeueReusableCell(MenuTableViewController.Key) as MenuTableViewController ?? MenuTableViewController.Create();
+            MenuTableViewController cell = (MenuTableViewController)tableView.DequeueReusableCell("MenuTableViewController");
             Console.WriteLine("N0rf3n - MenuTableSource - UITableViewCell - arrMenuText[indexPath.Row] : "+ arrMenuText[indexPath.Row]);
             Console.WriteLine("N0rf3n - MenuTableSource - UITableViewCell - arrMenuIcon[indexPath.Row] : "+ arrMenuIcon[indexPath.Row]);
             cell.BindData(arrMenuText[indexPath.Row], arrMenuIcon[indexPath.Row]);
