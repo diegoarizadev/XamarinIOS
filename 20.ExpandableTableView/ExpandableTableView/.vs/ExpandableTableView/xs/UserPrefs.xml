@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{6A53C308-BA09-4120-AC25-686D27FD3252}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ExpandableTableView" expanded="True">
+            <Node name="ExpandableTableView" expanded="True">
+              <Node name="HeaderCell.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../../../ProdN0r/AW1169_AppNegocios/appBancolombia.iOS/Implementations/Dashboard/DashboardViewController.cs" line="805" offsetX="-1" offsetY="-1" expression="generalBalanceView.Hidden" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.ItemProperties.ExpandableTableView PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.96EA7683-C592-47B7-93A0-ED37013F4AD4" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
