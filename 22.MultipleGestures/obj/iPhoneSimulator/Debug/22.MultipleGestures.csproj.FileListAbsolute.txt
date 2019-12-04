@@ -1,0 +1,13 @@
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/bin/iPhoneSimulator/Debug/_22.MultipleGestures.exe
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/bin/iPhoneSimulator/Debug/_22.MultipleGestures.pdb
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/ibtool/_BundleResourceWithLogicalName.items
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/actool/_PartialAppManifest.items
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/actool/_BundleResourceWithLogicalName.items
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/coremlc/_PartialAppManifest.items
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/coremlc/_BundleResourceWithLogicalName.items
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-13.2.2/optimized/
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/22.MultipleGestures.csproj.CopyComplete
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/_22.MultipleGestures.exe
+/Users/diego.ariza/Desktop/XamarinEntrenamiento/XamarinIOS/22.MultipleGestures/obj/iPhoneSimulator/Debug/_22.MultipleGestures.pdb

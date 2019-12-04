@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{68A03107-6A96-4732-B366-25E4EDEE6472}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ViewController.cs">
+    <Files>
+      <File FileName="ViewController.cs" Line="30" Column="56" />
+      <File FileName="Main.cs" Line="12" Column="1" />
+      <File FileName="Main.cs" Line="12" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="22.MultipleGestures" expanded="True">
+            <Node name="22.MultipleGestures" expanded="True" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.22.MultipleGestures PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7A3897ED-84E0-44E2-8745-6ACF5B5EF8B2" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
